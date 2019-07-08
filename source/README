@@ -22,9 +22,9 @@ This source archive is freely distributable as long as it is kept intact.  You
 may produce modified and derived versions of Q-Blue as long as any distribution
 made from them is clearly marked as being derivative of Q-Blue 2.4 -- that is,
 it must both acknowledge the original Q-Blue 2.4 as being the work of Paul
-Kienitz, and clearly state that the modified version is someone else's work.  I
-would suggest that derived versions use version numbers of 3.0 and above.  If
-fragments of the source are useful for unrelated projects that are not in
+Kienitz, and clearly state that the modified version is someone else's work.
+I would suggest that derived versions use version numbers of 3.0 and above.
+If fragments of the source are useful for unrelated projects that are not in
 themselves variations of Q-Blue, you may use them without acknowledgement,
 though a mention in the documentation would be considerate if you use any large
 pieces.
