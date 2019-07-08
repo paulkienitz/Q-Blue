@@ -1,0 +1,34 @@
+This archive contains the complete source code for Q-Blue v2.4 by Paul Kienitz.
+The file "bluewave.h" is taken from the Blue Wave 3.0 development kit, commonly
+distributed as BWDEV300.ZIP.  I found no rules in BWDEV300 against distributing
+this file separately from the others.
+
+The makefile is intended for Aztec C 5.2, and I'm not sure if it works with the
+version of make supplied by Aztec.  I have therefore included a make executable
+that I compiled myself, which is the one this makefile is designed to work with.
+It is derived from a version of make that was distributed on Fish disk 69.
+
+Getting this source to compile with some other compiler will probably be a
+substantial job.
+
+The makefile has many targets, for beta versions, unregistered crippleware
+versions, and so on... the default target is a debugging version.  To produce a
+finished version with no registration information, use the target "f", as in
+"make f".  All the code that was used for registration and/or crippleware
+restrictions is still in there, but no longer active.  Version 2.4 of Q-Blue is
+freely distributable.
+
+This source archive is freely distributable as long as it is kept intact.  You
+may produce modified and derived versions of Q-Blue as long as any distribution
+made from them is clearly marked as being derivative of Q-Blue 2.4 -- that is,
+it must both acknowledge the original Q-Blue 2.4 as being the work of Paul
+Kienitz, and clearly state that the modified version is someone else's work.  I
+would suggest that derived versions use version numbers of 3.0 and above.  If
+fragments of the source are useful for unrelated projects that are not in
+themselves variations of Q-Blue, you may use them without acknowledgement,
+though a mention in the documentation would be considerate if you use any large
+pieces.
+
+The home page of the original Q-Blue, at this writing, is:
+    http://paulkienitz.net/q-blue.html
+This page should contain both the Q-Blue 2.4 release, and the source archive.
