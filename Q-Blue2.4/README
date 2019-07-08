@@ -1,0 +1,181 @@
+
+The bad news is that v2.4 is the final Q-Blue release; there will be no more
+updates.  The good news is that Q-Blue is now freeware, available for anyone
+to use, instead of costing $20 to register as all versions up to 2.3 did.
+The other bad news, of course, is that it took so long for me to go back and
+finish this final release that now there's probably nobody to use it.
+
+Q-Blue 2.4 is not much different from 2.3, but does have a couple of added
+features.  If you are using a version of Q-Blue earlier than 2.3, please
+review the material below.
+
+If you have been using Q-Blue 2.3, the only major new feature added is
+support for attached files.  This is covered in section 10.11 of the manual,
+"Q-Blue.doc".  There is one new setup option, described at the end of
+section 6.3: when Q-Blue's screen is not overscanned, you can have a
+scrollbar at the right edge of the screen that hides itself except when the
+mouse is near it.
+
+Q-Blue can be started from a CLI prompt or from the Workbench.  Command line
+and tool type options are described in the manual, "Q-Blue.doc".  Commonly,
+none are needed.  When started from a CLI, it automatically detaches itself
+to run in the background, so you get your command prompt back right away.
+
+Before running the program, you should double-click on the included "Install"
+script icon, especially if you do not have suitable IBM fonts in your FONTS:
+drawer.  It will describe several included fonts and let you select which
+ones to install.  If you are using fonts from a release of Q-Blue older than
+v2.3, you should run this script and install the latest set.  This release
+includes some fonts that use the Amiga's regular ISO character set, with the
+same "look" as the IBM fonts.  For each IBM font there is an ISO font of
+matching size and similar name, except for those IBM fonts that match the
+built-in topaz 8 and topaz 9 fonts (newcleanibm 8 and wideibm 9).
+
+The most complex part of using the program is setting it up for the first
+time, but even that is, in many ways, easier to do than to describe.  The
+process is explained in complete detail in the user manual.  Once Q-Blue is
+set up, most of its operation is intuitively obvious.  Those who are using an
+older version of Q-Blue should note that many of the default commands for the
+supported archiving programs have been changed.  You may wish to alter your
+configuration to use the new commands, detailed in sections 5.2 and 5.4 of
+the user manual.
+
+If you have version 1.0 or older of Q-Blue, it is especially recommended that
+you change the Zip compression command from "Zip -jkr @A @D" to the new form
+"Zip -k @A *".  (Or if you have a version of Zip older than 2.0, you should
+use "Zip -k @A @F".  If your Zip command is "Zip -k @A @F", as may be the
+case if you have Q-Blue 1.9 or newer, you should change it to "Zip -k @A *",
+again except in the case of a very old version of Zip.  Note also that there
+are now two Zip command settings: one for normal use, and one for use with
+outdated software compatible with PKZIP 1.x; the Zip 1.x version uses "Zip -
+0k @A *" as its compression command, and "50 4B 03 04 0A" as its pattern.
+(Decompression is identical for both.)  Commands for the LZX compressor have
+also been added: the command for decompression is "LZX -m -X0 x @A", for
+compression is "LZX -X0 a @A #?", and the pattern is "4C 5A 58".
+
+If you have been using Q-Blue version 2.0 or 2.1, the most important new
+features added in v2.3 were Internet email and newsgroup handling, and
+support for new offline configuration features found in Blue Wave 3.x doors.
+For these new features, see sections 6.10 (on setting up email for QWK
+packets and systems that use Fidonet gating), 10.8 (on writing email and,
+with BW 3.x, newsgroup posts), and 11.2 through 11.5 (on BW offline
+configuration).  Some new setup options are discussed in sections 4.1, 6.3,
+and 6.8; section 6.9 on QWK netmail also reflects some changes, and should
+especially be reviewed if you want to set up Fido gated email in QWK packets.
+
+One feature that is new as of v2.3 is that BBS pointer files are now saved
+automatically in the context directory.  This is explained in section 8.3 of
+the manual.  Also, the "save message" command, when used on a bulletin file,
+now makes an accurate binary copy instead of doing things like adding a
+header and stripping out ANSI codes.
+
+The manual is formatted for printing on US letter or European A4 size paper.
+The margins are set up on the assumption that printing begins up to one half
+inch (12 mm) below the top edge of the paper.  Each page of the document
+contains 60 lines including headers and footers, so if your printer has
+vertical margins or a perforation skip feature, the page length should still
+fit.  It is 148 pages long.  It contains ANSI underlining codes, so printing
+it through your regular Amiga printer driver will underline various things if
+your printer is capable of doing so, as most are.  The underlining will also
+show if it is viewed with most text viewers such as More.
+
+Below is a copy of Q-Blue's new distribution license.  It is substantially
+different from that of past versions, since I am no longer taking money for
+it, even if offered.
+
+    The computer program "Q-Blue, release 2.4" is copyright (c) 1992-
+    1999 by Paul Kienitz, with all rights reserved except as stated
+    here.  The archive containing the executable program file
+    "Q-Blue", the manual "Q-Blue.doc", and the various fonts and other
+    incidental files included in this distribution, may be freely
+    copied, distributed, and used so long as none of the contents of
+    the distribution package are modified or removed.  Additional
+    material may be added, but it should be labeled in some manner to
+    indicate that it is not part of the original Q-Blue distribution.
+
+    Previous versions of Q-Blue existed in two forms, an "evaluation"
+    version and a "registered" version.  The former was licensed to be
+    used only for a limited time by any one person; the latter was
+    licensed only to be used by a single person who was not permitted
+    to distribute copies.  With the release of Q-Blue 2.4 under this
+    license, permission is granted for copies of all such past
+    versions to be freely distributed on the same terms as this
+    version, so long as they are not represented as being this version
+    or a newer version.  Such distribution should be accompanied by
+    some notification stating that Q-Blue is now "freeware" and no
+    money should be sent to the author.  The restriction on modifying
+    contents of the distribution is lifted in two specific ways: it is
+    permitted to remove the file "How-to-order" which specified how to
+    buy a registered copy, and it is permitted to modify the section
+    of the manual labeled "How to contact the author" to include
+    up-to-date information from the equivalent section of the Q-Blue
+    2.4 manual.
+
+    Q-Blue, like most software, is provided "as is", with no warranty
+    of any kind.  The author cannot assume liability for any damage
+    caused by the software.
+
+Here is a list of all of the files included in this public beta distribution
+of Q-Blue, archived inside a drawer called "Q-Blue2.4":
+
+    Q-Blue                      the program itself
+
+    README                      this file you're reading
+    Install                     script that installs fonts and taglines
+
+    Q-Blue.doc                  the user manual
+
+    Taglines                    sample file for use with the tagline feature
+    Liberal-taglines            additional taglines, with a political bias
+
+    fonts/newcleanibm.font      four fonts using the IBM character set
+    fonts/newcleanibm/8
+    fonts/tallibm.font
+    fonts/tallibm/11
+    fonts/tallibm/12
+    fonts/tallibm/14
+    fonts/stretchibm.font
+    fonts/stretchibm/12
+    fonts/wideibm.font
+    fonts/wideibm/9
+    fonts/wideibm/12
+    fonts/wideibm/14
+    
+    fonts/talliso.font         three fonts using the ISO character set
+    fonts/talliso/11
+    fonts/talliso/12
+    fonts/talliso/14
+    fonts/stretchiso.font
+    fonts/stretchiso/12
+    fonts/wideiso.font
+    fonts/wideiso/12
+    fonts/wideiso/14
+
+    c/Future                    a little utility for adjusting file dates
+
+    c/IsADir                    four small programs used by Install script
+    c/XSkip
+    c/RequestChoice
+    c/RequestFile
+    
+    Q-Blue.info                 icons
+    README.info
+    Install.info
+    Q-Blue.doc.info
+    Taglines.info
+    Liberal-taglines.info
+    fonts.info
+
+Also included in the archive, outside of the "Q-Blue2.4" drawer, are the
+drawer icon "Q-Blue2.4.info" and the file "file_id.diz", which contains a
+description suitable for BBS file listings.  Other files may have been added
+by distributors of the archive.  The "Q-Blue2.4" drawer is temporary and can
+be deleted after you have run the install script and dragged the program and
+the user manual (Q-Blue.doc) to the drawers where you will keep them.
+
+Past versions of Q-Blue distributed on floppy disk generally included copies
+of the Info-Zip compression and decompression programs for the Amiga.  Since
+this distribution is intended for downloading, they are not included here.
+They are available from ftp://ftp.cdrom.com/pub/infozip/AMIGA and various
+other sites that carry Info-Zip files.  See http://www.cdrom.com/pub/infozip
+for information on these tools (do NOT go to www.infozip.com).
