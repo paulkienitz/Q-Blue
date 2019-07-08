@@ -83,37 +83,37 @@ Below is a copy of Q-Blue's new distribution license.  It is substantially
 different from that of past versions, since I am no longer taking money for
 it, even if offered.
 
-    The computer program "Q-Blue, release 2.4" is copyright (c) 1992-
-    1999 by Paul Kienitz, with all rights reserved except as stated
-    here.  The archive containing the executable program file
-    "Q-Blue", the manual "Q-Blue.doc", and the various fonts and other
-    incidental files included in this distribution, may be freely
-    copied, distributed, and used so long as none of the contents of
-    the distribution package are modified or removed.  Additional
-    material may be added, but it should be labeled in some manner to
-    indicate that it is not part of the original Q-Blue distribution.
+    The computer program “Q-Blue, release 2.4” is copyright © 1992-1999
+    by Paul Kienitz, with all rights reserved except as stated here.
+    The archive containing the executable program file Q-Blue, the manual
+    Q-Blue.doc, and the various fonts and other incidental files included
+    in this distribution, may be freely copied, distributed, and used so
+    long as none of the contents of the distribution package are modified
+    or removed.  Additional material may be added, but it should be labeled
+    in some manner to indicate that it is not part of the original Q-Blue
+    distribution.
 
-    Previous versions of Q-Blue existed in two forms, an "evaluation"
-    version and a "registered" version.  The former was licensed to be
-    used only for a limited time by any one person; the latter was
-    licensed only to be used by a single person who was not permitted
-    to distribute copies.  With the release of Q-Blue 2.4 under this
-    license, permission is granted for copies of all such past
-    versions to be freely distributed on the same terms as this
-    version, so long as they are not represented as being this version
-    or a newer version.  Such distribution should be accompanied by
-    some notification stating that Q-Blue is now "freeware" and no
-    money should be sent to the author.  The restriction on modifying
-    contents of the distribution is lifted in two specific ways: it is
-    permitted to remove the file "How-to-order" which specified how to
-    buy a registered copy, and it is permitted to modify the section
-    of the manual labeled "How to contact the author" to include
-    up-to-date information from the equivalent section of the Q-Blue
-    2.4 manual.
+    Previous versions of Q-Blue existed in two forms, an “evaluation”
+    version and a “registered” version. The former was licensed to be used
+    only for a limited time by any one person; the latter was licensed only
+    to be used by a single person who was not permitted to distribute copies.
+    With the release of Q-Blue 2.4 under this license, permission is granted
+    for copies of all such past versions to be freely distributed on the same
+    terms as this version, so long as they are not represented as being this
+    version or a newer version.  Such distribution should be accompanied by
+    some notification stating that Q-Blue is now “freeware” and no money
+    should be sent to the author.  The restriction on modifying contents of
+    the distribution is lifted in one specific way: it is permitted to
+    replace the content of the text file “How-to-order”, which explained how
+    to buy a registered copy, with the following message, or any text which
+    includes an equivalent meaning:
 
-    Q-Blue, like most software, is provided "as is", with no warranty
-    of any kind.  The author cannot assume liability for any damage
-    caused by the software.
+        Q-Blue is now freeware and does not require registration.
+        The author can be emailed at paul@paulkienitz.net; all othe
+        contact information given in the manual is outdated.
+
+    Q-Blue, like most software, is provided “as is”, with no warranty of any kind.
+    The author cannot assume liability for any damage caused by the software.
 
 Here is a list of all of the files included in this public beta distribution
 of Q-Blue, archived inside a drawer called "Q-Blue2.4":
