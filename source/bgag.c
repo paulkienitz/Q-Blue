@@ -230,7 +230,7 @@ struct MenuItem misort0 = {
     &itsort0, null, 0, null, 0
 };
 
-MIT(itsort, "Sort messages        »");
+MIT(itsort, "Sort messages        Â»");
 
 struct MenuItem misort = {
     &misup1, 0, 0, ITEMWID, 10, ITEMTEXT | ITEMENABLED, 0,
@@ -390,7 +390,7 @@ struct MenuItem misave0 = {
     &itsave0, null, 0, null, 0
 };
 
-MIT(itmes5, "Save msg / attachment »");
+MIT(itmes5, "Save msg / attachment Â»");
 
 struct MenuItem mimes5 = {
     &mimes8, 0, 0, ITEMWID, 10, ITEMTEXT | ITEMENABLED, 0,
@@ -418,7 +418,7 @@ struct MenuItem miundo0 = {
     &itundo0, null, 0, null, 0
 };
 
-MIT(itmes3, "Undo search          »");
+MIT(itmes3, "Undo search          Â»");
 
 struct MenuItem mimes3 = {
     &mimes4, 0, 0, ITEMWID, 10, ITEMTEXT, 0,
@@ -493,7 +493,7 @@ struct IntuiText passit[GREENBAY];
 
 struct MenuItem passum[GREENBAY];
 
-MIT(itcomp, "Compression type     »");
+MIT(itcomp, "Compression type     Â»");
 
 struct MenuItem micomp = {
     &mipac5, 0, 0, ITEMWID, 10, ITEMTEXT | ITEMENABLED, 0,
@@ -590,7 +590,7 @@ struct NewMenu mainudef[] = {
       { NM_ITEM, "Undo search", 0, 0, 0, 0 },
 	{ NM_SUB, "all areas  Alt-U", 0, 0, 0, 0 },
 	{ NM_SUB, "this area      U", 0, 0, 0, 0 },
-      { NM_ITEM, "Save msg as file     »", 0, 0, 0, 0 },
+      { NM_ITEM, "Save msg as file     Â»", 0, 0, 0, 0 },
         { NM_SUB, "ask filename...   V", 0, 0, 0, 0 },
 	{ NM_SUB, "append prev.  Alt-V", 0, 0, 0, 0 },
       { NM_ITEM, "Print message    Alt-P", 0, 0, 0, 0 },
