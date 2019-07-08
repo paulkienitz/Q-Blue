@@ -1,0 +1,149 @@
+echo "*N            ****** Q-Blue 2.4 installation script ****** *N"
+echo "   Using Mike Austin's clones of RequestFile and RequestChoice.*N"
+
+if not exists "Q-Blue.doc.info"
+  echo "*N !!!  THIS SCRIPT WILL WORK ONLY WHEN ITS CURRENT"
+  echo " !!!  DIRECTORY IS WHERE THE Q-BLUE DISTRIBUTION EXISTS."
+  echo " !!!  IT'S BEST TO JUST RUN IT USING THE WORKBENCH ICON."
+  Quit 20    ; may leave a CLI window if IconX'd from wrong directory under v37
+endif
+
+resident RqFile c/RequestFile pure
+resident RqChoice c/RequestChoice pure
+resident c/IsADir pure
+resident c/XSkip pure   ; version of Skip that doesn't gag on 500 char lines
+
+failat 25
+alias > nil: reqc RqChoice "Q-Blue 2.4 Installation" []
+if error
+  failat 15
+  alias reqc literal RqChoice "Q-Blue 2.4 Installation" []
+endif           ; that second version is for WShell
+failat 15
+
+reqc "This script can install several fonts and other*Nfiles useful with Q-Blue.  You can select where*Neach will be installed, or skip any part.*NDo you want to go ahead with the installation?"
+if $result eq 0
+  echo "*N **** Installation cancelled"
+  XSkip cleanup
+endif
+
+set filepath ""
+reqc "The BBS messages that Q-Blue displays commonly use the*NIBM character set instead of the Amiga's normal ISO*Nset.  Q-Blue can handle this by using an IBM compatible*Nfont.  Several fonts, both IBM and ISO style, can be*Ninstalled now.  Normally they would go in the standard*NFONTS: directory.  Do you want to specify a different*Ndirectory before selecting which fonts to install?"
+if $result eq 1
+  LAB PICKFONTDIR
+  RqFile "Select directory for fonts" "FONTS:" "" DIRS
+  if not warn
+    IsADir "$result"
+    if warn
+      reqc "You have selected a filename instead of a*Ndirectory name.  Please pick a directory." "Okay"
+      XSkip pickfontdir back
+    else
+      set filepath "$result"
+    endif
+  endif
+else
+  set filepath "FONTS:"
+endif
+
+if "$filepath" eq ""
+  reqc "**** No valid directory selected*N**** fonts not installed" "Okay"
+else
+  echo "*N ===  Installing fonts in $filepath  ==="
+  reqc "newcleanibm.font is a sans-serif 8 by 8 pixel font*Nusing the IBM character set, which is a good choice*Nfor using Q-Blue on a basic non-interlaced NTSC or*NPAL screen.  Do you want to install this font?"
+  if $result eq 1
+    Copy fonts/newcleanibm#? ALL "$filepath"
+  endif
+  reqc "tallibm.font is an IBM font in 8 by 11, 8 by 12, and*N8 by 14 sizes, which is recommended when using Q-Blue*Nwith interlaced or productivity screens (640 pixels wide*Nand 400 or more tall).  Do you want to install it?"
+  if $result eq 1
+    Copy fonts/tallibm#? ALL "$filepath"
+  endif
+  reqc "wideibm.font is an IBM font in 10 by 9, 10 by 12,*Nand 10 by 14 sizes, which is recommended for those*Nwho will use Q-Blue on a screen 800 pixels wide.*NIt is not useful with older Amigas that cannot*Ndisplay such screens.  Do you want to install it?"
+  if $result eq 1
+    Copy fonts/wideibm#? ALL "$filepath"
+  endif
+  reqc "stretchibm.font is a 9 by 12 pixel IBM*Nfont, suitable for NTSC or PAL screens*Nwith plenty of horizontal overscan, 720*Npixels wide.  Do you want to install it?"
+  if $result eq 1
+    Copy fonts/stretchibm#? ALL "$filepath"
+  endif
+  reqc "talliso.font is similar to the tallibm font, with 8 by*N11, 8 by 12, and 8 by 14 sizes, but uses the Amiga's*NISO character set instead of IBM characters.  Like*Ntallibm, it is designed for interlaced screens, 640*Nby 400 or more pixels.  Do you want to install it?"
+  if $result eq 1
+    Copy fonts/talliso#? ALL "$filepath"
+  endif
+  reqc "wideiso.font is similar to the wideibm font, in*N10 by 12 and 10 by 14 sizes, but with the normal*NISO character set.  It is intended for screens*N800 pixels wide.  Do you want to install it?"
+  if $result eq 1
+    Copy fonts/wideiso#? ALL "$filepath"
+  endif
+  reqc "stretchiso.font is like the stretchibm font,*N9 by 12 pixels, but with the normal Amiga ISO*Ncharacter set.  It is suitable for NTSC or PAL*Nscreens with plenty of horizontal overscan,*N720 pixels wide.  Do you want to install it?"
+  if $result eq 1
+    Copy fonts/stretchiso#? ALL "$filepath"
+  endif
+  Wait 1
+endif
+
+set filepath ""
+reqc "Do you want to install the sample taglines file?  Use*Nthe file requester to select a filename that is not in*Nuse -- this script will not overwrite an existing file."
+if $result eq 1
+  LAB PICKATAG
+  RqFile "Select Taglines directory" "S:" "Taglines"
+  if not warn
+    IsADir "$result"
+    if warn
+      if exists "$result"
+        reqc "You have selected an existing file.  Please*Nselect a filename that is not currently in use." "Okay"
+        XSkip pickatag back
+      endif
+      set filepath "$result"
+    else
+      assign foobargoober: ""
+      cd "$result"
+      if exists "Taglines"
+        reqc "You have selected a directory where the file*N*"Taglines*" already exists.  Please select a*Nfilename that is not currently in use." "Okay"
+        cd foobargoober:
+        assign foobargoober:
+        XSkip pickatag back
+      endif
+      cd foobargoober:
+      assign foobargoober:
+      set filepath "Taglines"
+      set filepath "$result$filepath"
+    endif
+  else
+    reqc "**** No valid filename selected*N**** Taglines not installed" "Okay"
+  endif
+endif
+
+if not "$filepath" eq ""
+  echo > env:tagline-tail "; Taglines added or stolen with Q-Blue:*N; ====================================="
+  reqc "The file *"Liberal-taglines*" contains some additional*Ntaglines that express ideas that are politically left*Nof center.  Do you want to include these lines in the*Ntagline file being installed?"
+  failat 25
+  if $result eq 1
+    Join Taglines Liberal-taglines env:tagline-tail as "$filepath"
+    if error
+      Copy Taglines "$filepath"
+      reqc "**** JOIN command failed!*N**** Liberal-taglines not included" "Okay"
+    endif
+  else
+    Join Taglines env:tagline-tail as "$filepath"
+    if error
+      Copy Taglines "$filepath"
+    endif
+  endif
+  if not error
+    echo "Taglines saved as $filepath"
+  endif
+  Delete env:tagline-tail quiet
+endif
+
+reqc "That completes this script.  To install the*NQ-Blue program itself, just drag its icon to*Nwhatever drawer you want to keep it in.  The*Nsame goes for Q-Blue.doc, the user manual." "Okay"
+
+LAB CLEANUP
+resident RqFile remove
+resident RqChoice remove
+resident IsADir remove
+resident XSkip remove
+unset filepath
+failat 25
+unalias reqc
+if error                ; for WShell:
+  alias -kill reqc
+endif
