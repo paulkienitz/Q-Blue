@@ -1,8 +1,8 @@
-/* bottom-of-the-screen mouse buttons and main menus for Q-Blue.             */
+/* bottom-of-the-screen mouse buttons and main menus for Q-Blue. */
 
 /* unshifted letter shortcuts currently unused:               G H J K M Y Z  */
 /* Alt-letter shortcuts currently unused:                 A G H I J N Q X Z  */
-/* Ctrl-key shortcuts now in use:  A D F L N S T                             */
+/* Ctrl-key shortcuts now in use:                             A D F L N S T  */
 
 /* what keys to use for forthcoming commands?  Should cover:  loading reply  */
 /* packet after mail packet is open.  Maybe Alt-A ("add" replies) for that?  */
